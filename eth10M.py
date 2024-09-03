@@ -28,9 +28,9 @@ def extrair_simbolos(amostras):
             posicao += 1
         else:
             if posicao >= 20:
-                # Canal ocioso detectado, encerra a transmissão
-                break
+                return
             if posicao >= 6:
-                yield 1 - nivel_atual  # Inversão do símbolo
-            posicao = 1
+                posicao = 0
+                yield amostra  
+                
             nivel_atual = amostra
